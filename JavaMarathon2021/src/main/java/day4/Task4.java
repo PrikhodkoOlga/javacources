@@ -17,10 +17,13 @@ public class Task4 {
         }
 
         int maxSum = array[0];
-        int currSum = 0;
+
         int numElem = 0;
         for (int i = 0; i < array.length - 2; i++) {
-            currSum = array[i] + array[i+1] + array[i+ 2];
+            int currSum = 0;
+            for (int j = i; j < i + 3; j++) {
+                currSum += array[j];
+            }
             if (currSum > maxSum){
                 maxSum = currSum;
                 numElem = i;
