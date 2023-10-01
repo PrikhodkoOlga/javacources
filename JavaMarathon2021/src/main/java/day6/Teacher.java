@@ -23,7 +23,7 @@ public class Teacher {
             case 3:
                 markString = "удовлетворительно";
                 break;
-            case 2:
+            default:
                 markString = "неудовлетворительно";
                 break;
         }
