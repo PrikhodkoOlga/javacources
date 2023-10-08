@@ -18,18 +18,18 @@ public class TestFigures {
 
     public static double calculateRedPerimeter(Figure[] figures){
         double sumPer = 0;
-        for (Figure figere: figures) {
-            if ("Red".equals(figere.getColor())){
-                sumPer += figere.perimeter();
+        for (Figure figure: figures) {
+            if ("Red".equals(figure.getColor())){
+                sumPer += figure.perimeter();
             }
         }
         return sumPer;
     }
     public static double calculateRedArea(Figure[] figures){
         double sumArea = 0;
-        for (Figure figere: figures) {
-            if ("Red".equals(figere.getColor())){
-                sumArea += figere.area();
+        for (Figure figure: figures) {
+            if ("Red".equals(figure.getColor())){
+                sumArea += figure.area();
             }
         }
         return sumArea;

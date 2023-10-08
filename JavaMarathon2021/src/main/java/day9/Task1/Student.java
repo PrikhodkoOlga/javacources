@@ -1,7 +1,7 @@
 package day9.Task1;
 
 public class Student extends Human{
-    String groupName;
+    private String groupName;
 
     public Student(String name, String groupName) {
         super(name);

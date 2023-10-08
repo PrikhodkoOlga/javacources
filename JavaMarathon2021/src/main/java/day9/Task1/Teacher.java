@@ -1,7 +1,7 @@
 package day9.Task1;
 
 public class Teacher extends Human{
-    String subjectName;
+    private String subjectName;
 
     public Teacher(String name, String subjectName) {
         super(name);
