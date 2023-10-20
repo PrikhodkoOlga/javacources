@@ -1,6 +1,7 @@
 package day11.task2;
 
 public class Shaman extends Hero implements Healer, MagicAttack{
+    private int magicAtt;
     private static final int HEALER_HIMSELF = 50;
     private static final int HEALER_TEAMMATE = 30;
     public Shaman() {
@@ -34,13 +35,13 @@ public class Shaman extends Hero implements Healer, MagicAttack{
 
     @Override
     public void magicalAttack(Hero hero) {
-        if(hero.health == 0){
+        if(hero.health == MIN_HEALTH){
             System.out.println(hero);
             return;
         }
 
         double damageReceived = this.magicAtt * (1 - hero.magicDef);
-        hero.health = hero.health < damageReceived ? 0 : (int) (hero.health - damageReceived);
+        hero.health = hero.health < damageReceived ? MIN_HEALTH : (int) (hero.health - damageReceived);
 
         System.out.println(hero);
     }

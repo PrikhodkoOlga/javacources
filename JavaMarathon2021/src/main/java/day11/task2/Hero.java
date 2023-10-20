@@ -7,7 +7,6 @@ public abstract class Hero implements PhysAttack{
     double physDef;
     double magicDef;
     int physAtt;
-    int magicAtt;
 
     public Hero(){
         this.health = MAX_HEALTH;
