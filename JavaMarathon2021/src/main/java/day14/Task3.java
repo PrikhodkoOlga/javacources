@@ -23,6 +23,7 @@ public class Task3 {
 
                 list.add(new Person(linesArray[0], Integer.parseInt(linesArray[1])));
             }
+            scanner.close();
             return list;
 
         }catch (FileNotFoundException ex){

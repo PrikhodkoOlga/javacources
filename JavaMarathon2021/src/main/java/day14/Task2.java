@@ -23,6 +23,7 @@ public class Task2 {
                     throw new Exception();
                 list.add(line);
             }
+            scanner.close();
             return list;
 
         }catch (FileNotFoundException ex){
