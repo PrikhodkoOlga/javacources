@@ -4,12 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessageDatabase {
-    private static List<Message> messages;
+    private static List<Message> messages = new ArrayList<>();
 
     public static void addNewMessage(User u1, User u2, String text){
-        if (messages == null){
-            messages = new ArrayList<>();
-        }
         messages.add(new Message(u1, u2, text));
     }
 

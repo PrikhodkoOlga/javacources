@@ -39,10 +39,7 @@ public class MusicBand {
         this.year = year;
     }
     public static void transferMembers(MusicBand musicBand1, MusicBand musicBand2){
-        List <String> membersList1 = musicBand1.getMembers();
-        for (String member: membersList1) {
-            musicBand2.members.add(member);
-        }
+        musicBand2.members.addAll(musicBand1.getMembers());
         musicBand1.getMembers().clear();
     }
     public void printMembers(){
