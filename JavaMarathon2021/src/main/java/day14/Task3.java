@@ -13,13 +13,12 @@ public class Task3 {
     }
     public static List<Person> parseFileToObjList(File file){
         List<Person> list = new ArrayList<>();
-        try {
-            Scanner scanner = new Scanner(file);
+        try (Scanner scanner = new Scanner(file)){
             while (scanner.hasNext()) {
                 String line = scanner.nextLine();
                 String[] linesArray = line.split(" ");
                 if (Integer.parseInt(linesArray[1]) < 0)
-                    throw new Exception();
+                    throw new IllegalArgumentException("Некорректный входной файл");
 
                 list.add(new Person(linesArray[0], Integer.parseInt(linesArray[1])));
             }
@@ -28,8 +27,8 @@ public class Task3 {
 
         }catch (FileNotFoundException ex){
             System.out.println("Файл не найден");
-        } catch (Exception e) {
-            System.out.println("Некорректный входной файл");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
         return null;
     }

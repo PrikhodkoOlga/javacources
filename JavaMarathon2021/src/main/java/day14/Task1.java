@@ -5,18 +5,16 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Task1 {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         File file = new File("fileTest.txt");
         printSumDigits(file);
     }
-    public static void printSumDigits(File file) throws FileNotFoundException {
-        Scanner scanner = null;
-        try {
-            scanner = new Scanner(file);
+    public static void printSumDigits(File file){
+        try (Scanner scanner = new Scanner(file)){
             String line = scanner.nextLine();
             String[] numbersArray = line.split(" ");
             if (numbersArray.length != 10)
-                throw new Exception();
+                throw new Exception("Некорректный входной файл");
             int sum = 0;
 
             for (String elem : numbersArray) {
@@ -27,8 +25,7 @@ public class Task1 {
         } catch (FileNotFoundException ex) {
             System.out.println("Файл не найден");
         } catch (Exception e) {
-            System.out.println("Некорректный входной файл");
+            System.out.println(e.getMessage());
         }
-        scanner.close();
     }
 }

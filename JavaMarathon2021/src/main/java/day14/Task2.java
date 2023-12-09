@@ -14,23 +14,23 @@ public class Task2 {
     }
     public static List<String> parseFileToStringList(File file){
         List<String> list = new ArrayList<>();
-        try {
-            Scanner scanner = new Scanner(file);
+        try (Scanner scanner = new Scanner(file)){
+
             while (scanner.hasNext()) {
                 String line = scanner.nextLine();
                 int age = Integer.parseInt(line.split(" ")[1]);
                 if (age < 0)
-                    throw new Exception();
+                    throw new IllegalArgumentException("Некорректные данные");
                 list.add(line);
             }
-            scanner.close();
             return list;
 
         }catch (FileNotFoundException ex){
             System.out.println("Файл не найден");
-        } catch (Exception e) {
-            System.out.println("Некорректный входной файл");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
         }
+
         return null;
     }
 }
